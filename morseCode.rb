@@ -39,6 +39,13 @@ Morse_dic = {
 "-----"=>"0"
 }
 
+# function to decode letters
+def decode_morse(morse) 
+  dic = Morse_dic
+  n = dic[morse]
+  puts n.upcase
+end
+
 
 
 
