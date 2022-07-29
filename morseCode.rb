@@ -58,6 +58,48 @@ def Decode_word(word)
   end
   print newWord.join('')
 end
+# function to decode words and return it (this will be used to generate words for the decode_sentence  Funciton)
+def Decode_arr_word(arr)
+  dic = Morse_dic
+  newWord = []
+  arr.each do |i|
+    newLetter = dic[i]
+    letterUpcase = newLetter.upcase
+    newWord.push(letterUpcase)
+  end
+  newWord
+end
+
+# function to decode sentences and print them
+def Decode_sentence(sentence)
+  dic = Morse_dic
+  allSentence = []
+  byWord = sentence.split('   ')
+  byletter = []
+  byWord.each do |i|
+    n =i.split(' ')
+    byletter.push(n)
+  end
+  
+  byletter.each do |l|
+    allSentence.push(Decode_arr_word(l))
+  end
+  fullSentence = ''
+  fullSentenceLength = 0;
+  allSentence.each do |e|
+    joinWord = e.join('')
+  if fullSentenceLength > 0 
+    fullSentence += (" " + joinWord)
+  else
+    fullSentence+= + joinWord
+  end
+
+  fullSentenceLength+=1
+  end
+
+
+  fullSentence
+end
 
 
 
