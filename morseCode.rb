@@ -46,7 +46,18 @@ def decode_morse(morse)
   puts n.upcase
 end
 
-
+# function to decode words and prints it
+def Decode_word(word)
+  dic = Morse_dic
+  newWord = []
+  arr = word.split(' ')
+  arr.each do |i|
+    newLetter = dic[i]
+    letterUpcase = newLetter.upcase
+    newWord.push(letterUpcase)
+  end
+  print newWord.join('')
+end
 
 
 
